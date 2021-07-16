@@ -7,12 +7,22 @@ import com.tuandt.repository.StudentRepository;
 import com.tuandt.repository.StudentRepositoryImpl;
 
 public class StudentServiceImpl implements StudentService {
-	
+
 	// new StudentRepositoryImpl(); Như này là constructor drawbacks
 	// hard code: nếu khởi tạo có 2 đối số, lúc sau StudentRepositoryImpl update
 	// có thêm 1 đối số nữa. Rõ ràng phải sửa ở cả đây => Hard code.
 	// high coupling (bị phụ thuộc cao mặc dù đã tách interface)
-	private StudentRepository studentRepository = new StudentRepositoryImpl();
+	// private StudentRepository studentRepository = new StudentRepositoryImpl();
+
+	private StudentRepository studentRepository;
+
+	public StudentRepository getStudentRepository() {
+		return studentRepository;
+	}
+
+	public void setStudentRepository(StudentRepository studentRepository) {
+		this.studentRepository = studentRepository;
+	}
 
 	public List<Student> getAllStudent() {
 		return studentRepository.getAllStudent();

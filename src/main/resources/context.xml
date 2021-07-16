@@ -3,6 +3,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-        
-    <bean name="studentService" class="com.tuandt.service.StudentServiceImpl" />
+
+	<bean name="studentRepository"
+		class="com.tuandt.repository.StudentRepositoryImpl" />
+
+	<bean name="studentService"
+		class="com.tuandt.service.StudentServiceImpl">
+		<!-- ref <-> name o bean ben tren -->
+		<!-- name <-> setStudentRepository => Phai trung voi setter o com.tuandt.service.StudentServiceImpl -->
+		<property name="studentRepository" ref="studentRepository"></property>
+	</bean>
 </beans>
