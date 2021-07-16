@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.tuandt.model.Student;
 
-public class StudentRepositoryImpl {
+public class StudentRepositoryImpl implements StudentRepository {
 	
 	public List<Student> getAllStudent() {
 		List<Student> studentList = new ArrayList<Student>();
