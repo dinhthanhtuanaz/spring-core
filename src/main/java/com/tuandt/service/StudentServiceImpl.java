@@ -2,6 +2,8 @@ package com.tuandt.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.tuandt.model.Student;
 import com.tuandt.repository.StudentRepository;
 import com.tuandt.repository.StudentRepositoryImpl;
@@ -20,6 +22,7 @@ public class StudentServiceImpl implements StudentService {
 		super();
 	}
 	
+	@Autowired
 	public StudentServiceImpl(StudentRepository studentRepository) {
 		System.out.println("Constructor...");
 		this.studentRepository = studentRepository;
@@ -29,6 +32,7 @@ public class StudentServiceImpl implements StudentService {
 		return studentRepository;
 	}
 
+	@Autowired
 	public void setStudentRepository(StudentRepository studentRepository2) {
 		System.out.println("Setter...");
 		this.studentRepository = studentRepository2;
