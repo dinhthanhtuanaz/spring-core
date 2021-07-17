@@ -10,7 +10,8 @@
 	<bean name="studentService"
 		class="com.tuandt.service.StudentServiceImpl">
 		<!-- ref <-> name o bean ben tren -->
-		<!-- name <-> setStudentRepository => Phai trung voi setter o com.tuandt.service.StudentServiceImpl -->
+		<!-- name <-> setStudentRepository => Phai trung voi ten setter o com.tuandt.service.StudentServiceImpl -->
 		<property name="studentRepository" ref="studentRepository"></property>
+		<constructor-arg name="studentRepository" ref="studentRepository"></constructor-arg>
 	</bean>
 </beans>

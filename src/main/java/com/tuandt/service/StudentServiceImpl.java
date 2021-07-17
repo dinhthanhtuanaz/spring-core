@@ -16,12 +16,22 @@ public class StudentServiceImpl implements StudentService {
 
 	private StudentRepository studentRepository;
 
+	public StudentServiceImpl() {
+		super();
+	}
+	
+	public StudentServiceImpl(StudentRepository studentRepository) {
+		System.out.println("Constructor...");
+		this.studentRepository = studentRepository;
+	}
+
 	public StudentRepository getStudentRepository() {
 		return studentRepository;
 	}
 
-	public void setStudentRepository(StudentRepository studentRepository) {
-		this.studentRepository = studentRepository;
+	public void setStudentRepository(StudentRepository studentRepository2) {
+		System.out.println("Setter...");
+		this.studentRepository = studentRepository2;
 	}
 
 	public List<Student> getAllStudent() {
